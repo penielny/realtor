@@ -1,0 +1,35 @@
+
+<div class="header">
+    <h1>Browse Properties</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione reprehenderit quia tempora cupiditate debitis amet corrupti animi hic modi</p>
+</div>
+<div class="search-container">
+    <app-search-bar
+      [searchTerm]="searchTerm"
+      (searchTermChange)="searchTerm = $event"
+      [selectedType]="selectedType"
+      (selectedTypeChange)="selectedType = $event"
+      (selectedSaleTypeChange)="selectedSaleType = $event"
+      [propertyTypes]="propertyTypes"
+      [propertySaleTypes]="propertySaleTypes"
+      [selectedSaleType]="selectedSaleType"
+    ></app-search-bar>
+  </div>
+
+<ng-container *ngIf="homes.length > 0; else noResults">
+    <div class="featured-grid">
+        @for (house of filteredHouses; track house.id) {
+        <app-house-card [house]="house"></app-house-card>
+        }
+    </div>
+    <div class="hero-actions">
+        <button routerLink="/listings" class="hero-btn">Previous page</button>
+        <button routerLink="/listings" class="hero-btn secondary">Next page</button>
+      </div>
+</ng-container>
+<ng-template #noResults>
+    <div class="no-results">
+        <h3>No listings found</h3>
+        <p>Try adjusting your search or filter to find available homes.</p>
+    </div>
+</ng-template>

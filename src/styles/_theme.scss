@@ -1,0 +1,35 @@
+// src/styles/_theme.scss
+// Color theme variables with dark mode support
+
+:root {
+  --color-accent: #eb2525;
+  --color-primary: #000000;
+  --color-primary-foreground: #fff;
+  --color-secondary: #fbbf24;
+  --color-secondary-foreground: #1e293b;
+  --color-background: #f9fafb;
+  --color-surface: #fff;
+  --color-text: #1e293b;
+  --color-muted: #64748b;
+  --color-border: #e5e7eb;
+  --shadow-card: 0 2px 12px rgba(30,41,59,0.06);
+}
+
+.dark {
+  --color-accent: #eb2525;
+  --color-primary: #ffffff;
+  --color-primary-foreground: #1e293b;
+  --color-secondary: #f59e42;
+  --color-secondary-foreground: #fff;
+  --color-background: #1e293b;
+  --color-surface: #334155;
+  --color-text: #f1f5f9;
+  --color-muted: #94a3b8;
+  --color-border: #334155;
+  --shadow-card: 0 4px 24px rgba(30,41,59,0.18);
+}
+
+// Example usage in SCSS:
+// color: var(--color-primary);
+// background: var(--color-background);
+// box-shadow: var(--shadow-card); 

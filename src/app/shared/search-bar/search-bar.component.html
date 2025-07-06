@@ -1,0 +1,35 @@
+<div class="search-bar-container">
+  <div class="search-input-wrapper">
+    <span class="search-icon" aria-hidden="true">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <circle cx="11" cy="11" r="7" stroke-width="2"/>
+        <line x1="16.5" y1="16.5" x2="21" y2="21" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="searchTermChange.emit($event)"
+      placeholder="Search by title or city..."
+      class="search-input"
+      aria-label="Search by title or city"
+    />
+  </div>
+  <select
+  [(ngModel)]="selectedSaleType"
+  (ngModelChange)="selectedSaleTypeChange.emit($event)"
+  class="filter-select"
+>
+  <option value="">All Sale Types</option>
+  <option *ngFor="let type of propertySaleTypes" [value]="type">{{ type | titlecase }}</option>
+</select>
+
+  <select
+    [(ngModel)]="selectedType"
+    (ngModelChange)="selectedTypeChange.emit($event)"
+    class="filter-select"
+  >
+    <option value="">All Home Types</option>
+    <option *ngFor="let type of propertyTypes" [value]="type">{{ type | titlecase }}</option>
+  </select>
+</div>
