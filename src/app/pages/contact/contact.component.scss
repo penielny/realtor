@@ -1,0 +1,200 @@
+@use 'theme' as *;
+
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 35rem;
+    width: 100%;
+
+    .background {
+        background-color: var(--color-accent);
+        height: 80%;
+    }
+
+    .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 6rem 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .header {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 40%;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 2rem;
+
+            h1 {
+                font-family: 'Lexend', Arial, Helvetica, sans-serif;
+
+            }
+        }
+
+        .cards {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            .card {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                background-color: var(--color-surface);
+                padding: 1rem;
+                border-radius: 1rem;
+                border: 1px solid rgba(218, 218, 218, 0.572);
+                box-shadow: var(--shadow-card);
+                gap: 1rem;
+                text-align: center;
+                line-height: 2rem;
+                width: 20rem;
+
+                .circle-container {
+                    height: 5rem;
+                    width: 5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background-color: rgba(rgb(255, 68, 68), 0.2);
+
+                    svg {
+                        color: var(--color-accent);
+                        height: 2.5rem;
+                    }
+                }
+
+                .action {
+                    
+                    width: 100%;
+                    padding: 1rem 0;
+                    margin: 0, -1rem;
+                    border-top: 1px solid rgb(229, 229, 229);
+
+                    a{
+                         text-decoration: none;
+                         color: var(--color-accent);
+                         font-size: 0.9rem;
+                         font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    
+
+    a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-decoration: none;
+
+        svg {
+            height:1.5rem;
+        }
+    }
+}
+
+.send-message {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    padding: 5rem;
+    gap: 5rem;
+
+    .caption {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        line-height: 2rem;
+        padding: 3rem 0;
+
+        p {
+            padding-bottom: 1.5rem;
+        }
+
+
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-surface);
+        box-shadow: var(--shadow-card);
+        border: 1px solid rgba(218, 218, 218, 0.149);
+        border-radius: 1rem;
+        padding: 3rem 3rem;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .row {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+            }
+
+            .field {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                label {
+                    font-weight: 500;
+                    font-size: 15px;
+                    color: rgb(77, 77, 77);
+                }
+
+                input,
+                textarea {
+                    padding: 1rem;
+                    background-color: rgba(229, 229, 229, 0.424);
+                    outline: none;
+                    border: none;
+                    border-radius: 0.5rem;
+                }
+
+                textarea {
+                    resize: none;
+                    min-height: 10rem;
+                }
+            }
+
+            .action{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                button{
+                    padding: 1rem 2rem;
+                    border: none;
+                    border-radius: 0.5rem;
+                    background-color: var(--color-accent);
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

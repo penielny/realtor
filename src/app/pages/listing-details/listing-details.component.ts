@@ -2,10 +2,11 @@ import { Component, Input } from '@angular/core';
 import { House } from '../../../interfaces/house';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SAMPLE_HOUSES } from '../../../sample-data/sample-houses';
+import { GhsCurrencyPipe } from '../../pipes/ghs-currency.pipe';
 
 @Component({
   selector: 'app-listing-details',
-  imports: [],
+  imports: [GhsCurrencyPipe],
   templateUrl: './listing-details.component.html',
   styleUrl: './listing-details.component.scss'
 })

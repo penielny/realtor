@@ -5,7 +5,7 @@
 
     <div class="hero-actions">
       <a routerLink="/listings" class="hero-btn">Browse Properties</a>
-      <a routerLink="/listings" class="hero-btn secondary">Talk to an agent</a>
+      <a routerLink="/contact" class="hero-btn secondary">Talk to an agent</a>
     </div>
   </div>
   <div class="hero-illustration">
@@ -20,7 +20,7 @@
     <a [routerLink]="'/listings'">Browse Properties</a>
   </div>
   <div class="featured-list">
-    @for (house of featuredHouses.slice(1,3); track $index) {
+    @for (house of featuredHouses.slice(0,2); track $index) {
     <a [routerLink]="'/listings/'+house.id" class="featured">
       <div class="image-container">
         <img [src]="house.images[0]" [alt]="house.title" class="house-image">
