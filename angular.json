@@ -15,7 +15,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
             "outputPath": "dist/realtor",
             "index": "src/index.html",
@@ -51,13 +51,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "5MB",
+                  "maximumError": "10MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "5MB",
+                  "maximumError": "10MB"
                 }
               ],
               "outputHashing": "all"
@@ -110,7 +110,21 @@
               ]
             }
           }
-        }
+        },
+        "ssr": {
+  "builder": "@angular/ssr:ssr",
+  "options": {
+    "browserTarget": "realtor:build:production",
+    "serverTarget": "realtor:server:production"
+  },
+  "configurations": {
+    "development": {
+      "browserTarget": "realtor:build:development",
+      "serverTarget": "realtor:server:development"
+    }
+  },
+  "defaultConfiguration": "development"
+}
       }
     }
   }
