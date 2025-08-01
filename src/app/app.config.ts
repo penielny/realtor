@@ -28,6 +28,7 @@ export const prerenderConfig = {
   ],
   // Routes that should be client-side rendered
   clientRoutes: [
+    '/listings/:id',
     '/auth',
     '/admin/*'
   ]
