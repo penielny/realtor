@@ -10,7 +10,8 @@
     "build:ssr": "ng build && ng run realtor:server",
     "serve:ssr": "node dist/realtor/server/server.mjs",
     "dev:ssr": "ng run realtor:ssr",
-    "prerender": "ng run realtor:prerender"
+    "prerender": "ng run realtor:prerender",
+    "serve:ssr:realtor": "node dist/realtor/server/server.mjs"
   },
   "private": true,
   "dependencies": {

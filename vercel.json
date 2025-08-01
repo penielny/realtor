@@ -2,8 +2,11 @@
   "version": 3,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/node"
+      "src": "dist/realtor/server/server.mjs",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["dist/realtor/browser/**"]
+      }
     }
   ],
   "routes": [

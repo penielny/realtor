@@ -69,7 +69,7 @@
                 "src/styles"
               ]
             },
-            "outputMode": "server"
+            "prerender": true
           },
           "configurations": {
             "production": {
@@ -143,10 +143,11 @@
           }
         },
         "ssr": {
-          "builder": "@angular/ssr:ssr",
+          "builder": "@angular/ssr:build",
           "options": {
             "browserTarget": "realtor:build:production",
-            "serverTarget": "realtor:server:production"
+            "outputPath": "dist/realtor",
+            "serverEntryPoint": "src/main.server.ts"
           },
           "configurations": {
             "development": {
