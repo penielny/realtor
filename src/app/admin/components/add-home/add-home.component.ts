@@ -8,28 +8,33 @@ import { HomesService } from '../../services/homes.service';
 import { TiptapEditorDirective } from 'ngx-tiptap';
 import { Editor } from '@tiptap/core';
 import StarterKit from '@tiptap/starter-kit';
+import BubbleMenu from '@tiptap/extension-bubble-menu';
+import Bold from '@tiptap/extension-bold';
+import Italic from '@tiptap/extension-italic';
+
 
 @Component({
   selector: 'app-add-home',
   imports: [CommonModule, ReactiveFormsModule, UploadImageComponent, TiptapEditorDirective],
   templateUrl: './add-home.component.html',
-  styleUrl: './add-home.component.scss'
+  styleUrl: './add-home.component.scss',
 })
 export class AddHomeComponent implements OnDestroy, OnInit {
-  @Output() closeModal = new EventEmitter<void>();
+
   homesService = inject(HomesService);
-  homeForm: FormGroup;
+  @Output() closeModal = new EventEmitter<void>();
   @ViewChild(UploadImageComponent) uploadImage!: UploadImageComponent;
+  homeForm: FormGroup;
   propertyTypes = [
     'apartment', 'house', 'villa', 'townhouse', 'bungalow', 'studio',
     'mansion', 'chalet', 'farmhouse', 'penthouse', 'loft', 'other'
   ];
-
-  editor!: Editor;
-
   listingTypes = ['sale', 'rent'];
   amenities: IAmenities[] = []
   loading: boolean = false
+
+  editor!: Editor;
+
 
 
 
@@ -68,6 +73,11 @@ export class AddHomeComponent implements OnDestroy, OnInit {
     this.editor = new Editor({
       extensions: [
         StarterKit as any,
+        Bold,
+        Italic,
+        BubbleMenu.configure({
+          element: document.querySelector('.bubble-menu') as HTMLElement,
+        }),
       ],
       content: initialContent,
       onUpdate: ({ editor }) => {
@@ -116,6 +126,22 @@ export class AddHomeComponent implements OnDestroy, OnInit {
     const homeData = this.homeForm.value;
     this.homesService.addHome({ ...homeData, imageUrls: urls })
     this.loading = false;
+  }
+
+  toggleBold() {
+    this.editor.chain().focus().toggleBold().run();
+  }
+
+  toggleItalic() {
+    this.editor.chain().focus().toggleItalic().run();
+  }
+
+  toggleHeading(level: number) {
+    this.editor.chain().focus().toggleHeading({ level: level as any }).run();
+  }
+
+  toggleBulletList() {
+    this.editor.chain().focus().toggleBulletList().run();
   }
 
 

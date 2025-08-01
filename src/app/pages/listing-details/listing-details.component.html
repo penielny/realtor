@@ -48,124 +48,18 @@
         </div>
         <div class="about-property">
             <h3>About the Property</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
-            </p>
-            <ul>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sequi provident dicta.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sequi provident dicta.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sequi provident dicta.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sequi provident dicta.</li>
-            </ul>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
-            </p>
-
+            <div class="rich-output" [innerHTML]="house?.description"></div>
         </div>
         <div class="property-amenities">
             <h3>Properties Amenities</h3>
             <div class="amenities">
                 @for (feat of house?.features; track $index) {
                     <div class="item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor"
-                                d="M12 6.5V7m0-.5a6 6 0 0 1 6-6h.5V7a6.5 6.5 0 0 1-6.5 6.5m0-7a6 6 0 0 0-6-6h-.5V7a6.5 6.5 0 0 0 6.5 6.5m0 0V23m0-9.5v9m0 1H7.5a6 6 0 0 1-6-6H6a6 6 0 0 1 6 6Zm0 0h4.5a6 6 0 0 0 6-6H18a6 6 0 0 0-6 6Z" />
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path fill="currentColor" d="m6.933.332l.113.101l.89.89l1.26.001a1.48 1.48 0 0 1 1.453 1.198l.02.138l.007.143l-.002 1.259l.893.892a1.48 1.48 0 0 1 .19 1.86l-.089.12l-.101.112l-.893.891l.001 1.258c0 .659-.432 1.224-1.056 1.415l-.136.035l-.142.023l-.144.007h-1.26l-.891.892a1.48 1.48 0 0 1-1.86.19l-.12-.089l-.112-.101l-.892-.893l-1.258.001A1.48 1.48 0 0 1 1.35 9.48l-.02-.139l-.006-.142V7.936l-.89-.89a1.48 1.48 0 0 1-.19-1.86l.088-.12l.101-.112l.89-.891l.001-1.26c0-.72.516-1.32 1.198-1.452l.139-.02l.142-.007h1.26l.891-.89a1.48 1.48 0 0 1 1.98-.102zm1.212 3.657l-.085.071L5.5 6.62L4.44 5.56a.63.63 0 0 0-.88 0a.63.63 0 0 0-.071.795l.071.085l1.5 1.5a.625.625 0 0 0 .804.065l.076-.065l3-3a.61.61 0 0 0 0-.88a.63.63 0 0 0-.795-.071"/></svg>
+                        
                         {{feat.type.name}}
                     </div>
                 }
-                <!-- <div class="item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
-                            <path
-                                d="M11 4.5H5A2.5 2.5 0 0 0 2.5 7v5A2.5 2.5 0 0 0 5 14.5h6a2.5 2.5 0 0 0 2.5-2.5V7A2.5 2.5 0 0 0 11 4.5ZM3.5 7A1.5 1.5 0 0 1 5 5.5h6A1.5 1.5 0 0 1 12.5 7v5a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 12V7Z" />
-                            <path
-                                d="m15.727 5.58l-2.976 1.936a.5.5 0 0 0-.228.414l-.027 2.612a.5.5 0 0 0 .227.425l3.004 1.952a.5.5 0 0 0 .773-.419V6a.5.5 0 0 0-.773-.42Zm-.227 6l-2.001-1.301l.021-2.07l1.98-1.287v4.658Z" />
-                        </g>
-                    </svg>
-                    Security Camera
-                </div>
-                <div class="item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M6.615 21q-.67 0-1.143-.472Q5 20.056 5 19.385V4.615q0-.67.472-1.143Q5.944 3 6.615 3h10.77q.67 0 1.143.472q.472.472.472 1.143v14.77q0 .67-.472 1.143q-.472.472-1.143.472H6.615Zm0-1h10.77q.23 0 .423-.192q.192-.193.192-.423V4.615q0-.23-.192-.423Q17.615 4 17.385 4H6.615q-.23 0-.423.192Q6 4.385 6 4.615v14.77q0 .23.192.423q.193.192.423.192ZM12 18.23q1.748 0 2.99-1.24q1.24-1.242 1.24-2.99t-1.24-2.99Q13.747 9.77 12 9.77t-2.99 1.24Q7.77 12.253 7.77 14t1.24 2.99q1.242 1.24 2.99 1.24Zm0-.93q-.65 0-1.253-.247q-.603-.247-1.059-.703l4.662-4.662q.456.456.703 1.06q.247.602.247 1.252q0 1.375-.963 2.337T12 17.3ZM8 7q.425 0 .713-.288T9 6q0-.425-.288-.713T8 5q-.425 0-.713.288T7 6q0 .425.288.713T8 7Zm3 0q.425 0 .713-.288T12 6q0-.425-.288-.713T11 5q-.425 0-.713.288T10 6q0 .425.288.713T11 7ZM6 20V4v16Z" />
-                    </svg>
-                    Laundry
-                </div>
-                <div class="item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="1.5"
-                            d="M14 8a2 2 0 1 1-4 0a2 2 0 0 1 4 0m2.959-3C17.619 5.87 18 6.898 18 8s-.381 2.13-1.041 3M7.04 5C6.381 5.87 6 6.898 6 8s.381 2.13 1.041 3m13.275-8C21.38 4.43 22 6.15 22 8s-.62 3.57-1.684 5M3.684 3C2.62 4.43 2 6.15 2 8s.62 3.57 1.684 5M11 10L7 21m10 0l-4-11m-4.5 7h7"
-                            color="currentColor" />
-                    </svg>
-                    Internet
-                </div>
-                <div class="item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M12 19.5q-.938 0-1.502.5q-.563.5-1.81.5q-1.246 0-1.81-.5q-.563-.5-1.501-.5q-.783 0-1.254.318q-.471.319-1.098.519q-.188.061-.357-.06q-.168-.121-.168-.335q0-.232.156-.4q.156-.169.377-.254q.482-.205.948-.497q.465-.291 1.396-.291q1.17 0 1.733.5q.563.5 1.578.5q1.016 0 1.58-.5q.563-.5 1.732-.5q1.17 0 1.752.5t1.598.5q1.015 0 1.56-.5q.544-.5 1.713-.5q.93 0 1.396.291q.466.292.948.497q.221.085.377.253q.156.169.156.401q0 .214-.168.335q-.169.121-.357.06q-.627-.2-1.098-.519q-.471-.318-1.254-.318q-.938 0-1.483.5q-.544.5-1.79.5t-1.829-.5q-.583-.5-1.521-.5Zm0-4.5q-.95 0-1.5.5q-.548.5-1.812.5q-1.263 0-1.818-.5q-.555-.5-1.493-.5q-.783 0-1.254.318q-.471.319-1.098.519q-.188.061-.357-.06q-.168-.121-.168-.335q0-.232.156-.4q.156-.169.377-.254q.482-.205.948-.497Q4.446 14 5.377 14q1.17 0 1.736.5q.566.5 1.575.5q1.016 0 1.58-.5Q10.83 14 12 14t1.733.5q.563.5 1.579.5q1.015 0 1.578-.5q.564-.5 1.733-.5q.93 0 1.396.291q.466.292.948.497q.221.085.377.253q.156.169.156.401q0 .214-.168.335q-.169.121-.357.06q-.627-.2-1.098-.519Q19.406 15 18.623 15q-.938 0-1.474.5t-1.799.5q-1.252 0-1.832-.5q-.58-.5-1.518-.5Zm-4.215-3.83l3.228-3.23l-1.538-1.538q-.683-.683-1.364-1.007q-.682-.324-1.648-.449q-.288-.042-.506-.254q-.219-.211-.219-.5q0-.294.212-.483q.212-.19.5-.159q1.254.125 2.152.514q.898.39 1.79 1.282l5.823 5.823q-.194.16-.402.245q-.207.086-.482.086q-.67 0-1.32-.5T12 10.5t-2.012.5q-.65.5-1.319.5q-.275 0-.482-.086q-.208-.085-.402-.245Zm8.646-7.478q.877 0 1.496.622q.62.623.62 1.494q0 .877-.62 1.496t-1.496.62q-.877 0-1.496-.62q-.62-.62-.62-1.496q0-.871.62-1.494q.619-.622 1.496-.622Z" />
-                    </svg>
-                    Pool
-                </div>
-                <div class="item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
-                        <path fill="currentColor"
-                            d="m.5 5.5l-.29-.407A.5.5 0 0 0 0 5.5h.5Zm7-5l.29-.407a.5.5 0 0 0-.58 0L7.5.5Zm7 5h.5a.5.5 0 0 0-.21-.407l-.29.407Zm-12 2V7H2v.5h.5Zm10 0h.5V7h-.5v.5ZM1 15V5.5H0V15h1ZM.79 5.907l7-5l-.58-.814l-7 5l.58.814Zm6.42-5l7 5l.58-.814l-7-5l-.58.814ZM14 5.5V15h1V5.5h-1ZM3 15V7.5H2V15h1Zm-.5-7h10V7h-10v1Zm9.5-.5V15h1V7.5h-1ZM2.5 11h10v-1h-10v1ZM6 13h3v-1H6v1Z" />
-                    </svg>
-                    Garage
-                </div>
-                <div class="item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2">
-                            <path d="M15 3h.01" />
-                            <circle cx="11.5" cy="6.5" r=".5" />
-                            <circle cx="16.5" cy="7.5" r=".5" />
-                            <path d="M2 12h6m5 3H8v-3c0-.6.4-1 1-1h3c.6 0 1 .4 1 1Zm0-3h9" />
-                            <path d="M4 12v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M7 19v2m10-2v2" />
-                        </g>
-                    </svg>
-                    Jacuzzi
-                </div>
-                <div class="item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="1.5">
-                            <path
-                                d="M12 3v18m9-17.4v16.8a.6.6 0 0 1-.6.6H3.6a.6.6 0 0 1-.6-.6V3.6a.6.6 0 0 1 .6-.6h16.8a.6.6 0 0 1 .6.6Z" />
-                            <path d="m6 12l1.5-2L9 12m6 0l1.5 2l1.5-2" />
-                        </g>
-                    </svg>
-                    Elevator
-                </div>
-                <div class="item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="1.5">
-                            <path
-                                d="M7.5 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2.5M21 7H3m9 9v5m0 0h-2m2 0h2" />
-                            <path
-                                d="M12 16c1.657 0 3-1.492 3-3.333V10H9v2.667C9 14.507 10.343 16 12 16Zm6-10.99l.01-.011M15 5.01l.01-.011" />
-                        </g>
-                    </svg>
-                    Dish Washer
-                </div>
-                <div class="item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M18 10H6a1 1 0 0 0 0 2h1v9a1 1 0 0 0 2 0v-1h2v1a1 1 0 0 0 2 0v-1h2v1a1 1 0 0 0 2 0v-9h1a1 1 0 0 0 0-2Zm-7 8H9v-2h2Zm0-4H9v-2h2Zm4 4h-2v-2h2Zm0-4h-2v-2h2Zm5-12H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3a1 1 0 0 0 0-2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1a1 1 0 0 0 0 2a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3Zm-6 6a1 1 0 0 0 0-2h-4a1 1 0 0 0 0 2Z" />
-                    </svg>
-                    Basketball Court
-                </div> -->
             </div>
         </div>
     </div>

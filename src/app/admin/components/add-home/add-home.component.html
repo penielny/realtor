@@ -26,10 +26,14 @@
 
   <div class="field">
     <label for="description">Description</label>
-    <!-- <textarea id="description" formControlName="description" placeholder="Description"></textarea> -->
+    <div class="toolbar">
+    <button type="button" (click)="toggleBold()">Bold</button>
+    <button type="button" (click)="toggleItalic()">Italic</button>
+    <button type="button" (click)="toggleHeading(1)">H1</button>
+    <button type="button" (click)="toggleHeading(2)">H2</button>
+    <button type="button" (click)="toggleBulletList()">• List</button>
+  </div>
     <tiptap-editor class="editor" [editor]="editor"></tiptap-editor>
-    
-
   </div>
 
   <div class="field">
