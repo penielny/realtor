@@ -38,6 +38,10 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@supabase/node-fetch",
+              "whatwg-url"
+            ],
             "outputPath": "dist/realtor",
             "index": "src/index.html",
             "browser": "src/main.ts",
