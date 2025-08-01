@@ -15,7 +15,7 @@ export const routes: Routes = [
     path: 'listings/:id',
     loadComponent: () => import('./pages/listing-details/listing-details.component').then(c => c.ListingDetailsComponent),
     data: {
-      renderMode: 'dynamic'
+      renderMode: 'client'
     }
   },
   {

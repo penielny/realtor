@@ -14,6 +14,27 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        "prerender": {
+          "builder": "@angular/ssr:prerender",
+          "options": {
+            "browserTarget": "realtor:build:production",
+            "serverTarget": "realtor:server:production",
+            "routes": [
+              "/",
+              "/about",
+              "/contact",
+              "/listings",
+              "/booking"
+            ]
+          },
+          "configurations": {
+            "development": {
+              "browserTarget": "realtor:build:development",
+              "serverTarget": "realtor:server:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
         "build": {
           "builder": "@angular/build:application",
           "options": {

@@ -17,19 +17,3 @@ export const appConfig: ApplicationConfig = {
   ]
 };
 
-// Prerendering configuration for hybrid rendering
-export const prerenderConfig = {
-  routes: [
-    '/',
-    '/listings',
-    '/booking',
-    '/about',
-    '/contact'
-  ],
-  // Routes that should be client-side rendered
-  clientRoutes: [
-    '/listings/:id',
-    '/auth',
-    '/admin/*'
-  ]
-};
