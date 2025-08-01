@@ -8,9 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:ssr": "ng build && ng run realtor:server",
-  "serve:ssr": "node dist/realtor/server/server.mjs",
-  "dev:ssr": "ng run realtor:ssr",
-  "prerender": "ng run realtor:prerender"
+    "serve:ssr": "node dist/realtor/server/server.mjs",
+    "dev:ssr": "ng run realtor:ssr",
+    "prerender": "ng run realtor:prerender"
   },
   "private": true,
   "dependencies": {
