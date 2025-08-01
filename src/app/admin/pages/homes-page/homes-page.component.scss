@@ -1,0 +1,62 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex: 1;
+
+    .add-new {
+        background-color: black;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        //  border-radius: 0.9rem;
+    }
+}
+.actions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    button{
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    .delete {
+        background-color: red;
+        color: white;
+    }
+    .edit {
+        background-color: black;
+        color: white;   
+    }
+}
+.property-list-header {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(229, 229, 229, 0.732);
+     font-size: .8rem;
+
+    .item-name {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        width: 50%;
+    }
+
+    .header-col {
+        width: 20%;
+    }
+}

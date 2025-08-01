@@ -1,14 +1,14 @@
 @if(house){
     <a [routerLink]="['/listings', house.id]" class="house-card-link">
         <div class="house-card">
-            <img [src]="house.images[0]" [alt]="house.title" class="house-image">
+            <img [src]="house.images[0].url" [alt]="house.title" class="house-image">
             <div class="house-info">
                 <p class="house-price">{{ house.price | ghsCurrency }}</p>
 
                 <h3>{{ house.title }}</h3>
                 <p class="house-location">{{ house.address.street }}, {{ house.address.city }}</p>
                 <div class="house-meta">
-                    <span class="house-type">for {{ house.listingType | titlecase }}</span>
+                    <span class="house-type">for {{ house.listing_type| titlecase }}</span>
                 </div>
                 <div class="house-details">
                     <span>{{ house.bedrooms }} beds</span>

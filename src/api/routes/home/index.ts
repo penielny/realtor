@@ -1,7 +1,12 @@
-import { AngularNodeAppEngine, writeResponseToNodeResponse } from "@angular/ssr/node";
 import { NextFunction, Request, Response } from "express";
-const angularApp = new AngularNodeAppEngine();
+import { getRecentHomes, getSponsoredHomes } from "../../database/services";
 
-export default function homeRouteHandler(req: Request, res: Response,next:NextFunction) {
-  return res.send("Welcome to the homepage!");
+export default async function homeRouteHandler(req: Request, res: Response, next: NextFunction) {
+  const [sponsored, recentHomes] = await Promise.all([
+    getSponsoredHomes(),
+    getRecentHomes(),
+  ]);
+  return res.json({ sponsored, recentHomes });
 }
+
+

@@ -1,0 +1,23 @@
+<div
+  class="upload-box"
+  (drop)="onDrop($event)"
+  (dragover)="onDragOver($event)"
+  (click)="fileInput.click()"
+>
+  <p>Drag & drop images here or click to upload</p>
+  <input
+    type="file"
+    #fileInput
+    (change)="onFileSelect($event)"
+    accept="image/*"
+    multiple
+    hidden
+  />
+</div>
+
+<div class="preview-container">
+  <div class="image-preview" *ngFor="let img of previews; let i = index">
+    <img [src]="img" alt="preview" />
+    <button type="button" class="remove-btn" (click)="removeImage(i)">×</button>
+  </div>
+</div>

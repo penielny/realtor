@@ -22,7 +22,7 @@ export class NavbarComponent {
       } else {
         this.isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
       }
-      this.applyTheme();
+      // this.applyTheme();
     }
   }
 

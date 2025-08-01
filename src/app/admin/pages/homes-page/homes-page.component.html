@@ -1,0 +1,34 @@
+<div class="wrapper">
+    <div class="top-bar">
+        <h2>Properties</h2>
+        <button (click)="openAddHomeOverlay()" class="add-new">Add new home</button>
+    </div>
+
+    <app-search-bar></app-search-bar>
+
+    <div class="properties">
+       @if (checked) {
+         <div class="actions">
+            <button class="delete">Delete</button>
+            <button class="edit">Toggle Sponsore</button>
+        </div>
+       }
+        <div class="property-list-header">
+            <div class="item-name">
+                <input type="checkbox" />
+                <p>title</p>
+            </div>
+            <p class="header-col">bathrooms</p>
+            <p class="header-col">bedrooms</p>
+            <p class="header-col">areasqf</p>
+            <p class="header-col">listing</p>
+            <p class="header-col">price</p>
+        </div>
+        @for (property of homes; track $index) {
+        <app-property-item [property]="property"></app-property-item>
+        }
+    </div>
+    @if (showAddHomeOverlay) {
+    <app-add-home-overlay (closeModal)="closeAddHomeOverlay()"></app-add-home-overlay>
+    }
+</div>

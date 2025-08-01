@@ -1,0 +1,130 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    .header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        p {
+            line-height: 1.5rem;
+            color: rgb(113, 113, 113);
+            font-size: 14px;
+            width: 85%;
+        }
+
+        .header-h {
+            display: flex;
+            flex-direction: row;
+            align-items: start;
+            justify-content: space-between;
+            button {
+                background-color: rgb(0, 0, 0);
+                height: 1.8rem;
+                width: 1.8rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0.2rem;
+
+                svg {
+                    height: 1.3rem;
+                    width: 1.3rem;
+                    color: white;
+                }
+            }
+        }
+    }
+    .field-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .field {
+        // background-color: rgba(219, 219, 219, 0.391);
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        label {
+            font-size: small;
+            color: rgb(74, 74, 74);
+        }
+        input,
+        textarea,
+        select {
+            padding: 1rem;
+            resize: none;
+            background-color: rgba(219, 219, 219, 0.391);
+            border: none;
+            outline: none;
+            border-radius: 0.5rem;
+        }
+        textarea {
+            height: 5rem;
+        }
+    }
+    .col-group {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        .field {
+            flex: 1;
+            overflow: hidden;
+        }
+    }
+    .submit {
+        padding: 1.2rem;
+        border-radius: 0.5rem;
+        background-color: black;
+        color: white;
+    }
+
+    .submit:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
+}
+
+.editor {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-height: 150px;
+  padding: 0.75rem;
+  background: white;
+}
+
+/* styles.scss */
+
+tiptap-editor {
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    margin: 0 0 1rem 0;
+  }
+
+  ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  blockquote {
+    padding: 0.5rem 1rem;
+    border-left: 3px solid #ccc;
+    font-style: italic;
+    color: #555;
+    margin: 1rem 0;
+  }
+}

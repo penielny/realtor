@@ -1,3 +1,5 @@
+<app-client-layout>
+
 <div class="banner-image">
     <img src={{bannerImage}} alt="property image" srcset="">
 </div>
@@ -41,12 +43,7 @@
                 </div>
             </div>
             <p class="short-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sequi provident dicta. Excepturi numquam
-                odit ipsum perspiciatis placeat aspernatur, distinctio laboriosam, esse labore inventore cumque aperiam
-                dicta quae illum quam!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sequi provident dicta. Excepturi numquam
-                odit ipsum perspiciatis placeat aspernatur, distinctio laboriosam, esse labore inventore cumque aperiam
-                dicta quae illum quam!
+               {{house?.headline}}
             </p>
         </div>
         <div class="about-property">
@@ -76,14 +73,16 @@
         <div class="property-amenities">
             <h3>Properties Amenities</h3>
             <div class="amenities">
-                <div class="item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path fill="none" stroke="currentColor"
-                            d="M12 6.5V7m0-.5a6 6 0 0 1 6-6h.5V7a6.5 6.5 0 0 1-6.5 6.5m0-7a6 6 0 0 0-6-6h-.5V7a6.5 6.5 0 0 0 6.5 6.5m0 0V23m0-9.5v9m0 1H7.5a6 6 0 0 1-6-6H6a6 6 0 0 1 6 6Zm0 0h4.5a6 6 0 0 0 6-6H18a6 6 0 0 0-6 6Z" />
-                    </svg>
-                    Garden
-                </div>
-                <div class="item">
+                @for (feat of house?.features; track $index) {
+                    <div class="item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor"
+                                d="M12 6.5V7m0-.5a6 6 0 0 1 6-6h.5V7a6.5 6.5 0 0 1-6.5 6.5m0-7a6 6 0 0 0-6-6h-.5V7a6.5 6.5 0 0 0 6.5 6.5m0 0V23m0-9.5v9m0 1H7.5a6 6 0 0 1-6-6H6a6 6 0 0 1 6 6Zm0 0h4.5a6 6 0 0 0 6-6H18a6 6 0 0 0-6 6Z" />
+                        </svg>
+                        {{feat.type.name}}
+                    </div>
+                }
+                <!-- <div class="item">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
                             <path
@@ -166,14 +165,14 @@
                             d="M18 10H6a1 1 0 0 0 0 2h1v9a1 1 0 0 0 2 0v-1h2v1a1 1 0 0 0 2 0v-1h2v1a1 1 0 0 0 2 0v-9h1a1 1 0 0 0 0-2Zm-7 8H9v-2h2Zm0-4H9v-2h2Zm4 4h-2v-2h2Zm0-4h-2v-2h2Zm5-12H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3a1 1 0 0 0 0-2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1a1 1 0 0 0 0 2a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3Zm-6 6a1 1 0 0 0 0-2h-4a1 1 0 0 0 0 2Z" />
                     </svg>
                     Basketball Court
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
     <div class="property-right">
         <div class="contact-info">
             <div class="price-container">
-                <p>Property for {{house?.listingType}}</p>
+                <p>Property for {{house?.listing_type}}</p>
                 <h2>{{house?.price || 0 | ghsCurrency}}</h2>
             </div>
             <div class="get-in-touch">
@@ -218,8 +217,9 @@
     <div class="images">
         @for (image of house?.images; track image) {
         <div class="image">
-            <img src="{{image}}" alt="">
+            <img src="{{image.url}}" alt="">
         </div>
         }
     </div>
 </div>
+</app-client-layout>

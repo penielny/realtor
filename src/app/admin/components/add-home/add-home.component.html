@@ -1,0 +1,121 @@
+<form [formGroup]="homeForm" (ngSubmit)="onSubmit()">
+
+  <div class="header">
+    <div class="header-h">
+      <h2>List New Home</h2>
+      <button (click)="closeModal.emit()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid optio iste corporis reprehenderit iusto hic.</p>
+  </div>
+
+  <div class="field">
+    <label for="title">Title</label>
+    <input id="title" formControlName="title" placeholder="Title">
+  </div>
+
+  <div class="field">
+    <label for="headline">Headline</label>
+    <textarea id="headline" formControlName="headline" placeholder="Headline"></textarea>
+  </div>
+
+
+  <div class="field">
+    <label for="description">Description</label>
+    <!-- <textarea id="description" formControlName="description" placeholder="Description"></textarea> -->
+    <tiptap-editor class="editor" [editor]="editor"></tiptap-editor>
+    
+
+  </div>
+
+  <div class="field">
+    <label for="price">Price</label>
+    <input id="price" formControlName="price" placeholder="Price" type="number">
+  </div>
+
+  <div class="field">
+    <label for="bedrooms">Bedrooms</label>
+    <input id="bedrooms" formControlName="bedrooms" placeholder="Bedrooms" type="number">
+  </div>
+
+
+  <div class="field">
+    <label for="bathrooms">Bathrooms</label>
+    <input id="bathrooms" formControlName="bathrooms" placeholder="bathrooms" type="number">
+  </div>
+
+  <div class="field">
+    <label for="area">Area (sq ft)</label>
+    <input id="area" formControlName="area" placeholder="Area (sq ft)" type="number">
+  </div>
+
+  <div class="field">
+    <label for="available">Available</label>
+    <input id="available" type="checkbox" formControlName="available">
+  </div>
+
+  <div class="field">
+    <label for="listing_type">Listing type</label>
+    <select id="listing_type" formControlName="listingType">
+      <option *ngFor="let type of listingTypes" [value]="type">{{ type }}</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="property_type">Property type</label>
+
+    <select id="property_type" formControlName="propertyType">
+      <option *ngFor="let type of propertyTypes" [value]="type">{{ type }}</option>
+    </select>
+  </div>
+
+
+  <div class="field-group" formGroupName="address">
+    <p>Address</p>
+    <div class="field">
+      <label for="street">Street</label>
+      <input id="street" formControlName="street" placeholder="Street">
+    </div>
+    <div class="field">
+      <label for="city">City</label>
+      <input id="city" formControlName="city" placeholder="City">
+    </div>
+
+    <div class="col-group">
+
+      <div class="field">
+        <label for="state">State</label>
+        <input formControlName="state" placeholder="State">
+      </div>
+      <div class="field">
+        <label for="zipcode">Zip</label>
+        <input id="zipcode" formControlName="zipCode" placeholder="Zip Code">
+      </div>
+      <div class="field">
+        <label for="country">Country</label>
+        <input id="country" formControlName="country" placeholder="Country">
+      </div>
+    </div>
+
+
+  </div>
+
+  <h3>Features</h3>
+  <div formArrayName="features">
+    <div *ngFor="let f of features.controls; let i = index" [formGroupName]="i">
+      <select formControlName="type_id" id="feature_type">
+        <option *ngFor="let type of amenities" [value]="type.id">{{ type.name }}</option>
+      </select>
+      <button type="button" (click)="removeFeature(i)">Remove</button>
+    </div>
+    <button type="button" (click)="addFeature()">Add Feature</button>
+  </div>
+
+  <app-upload-image></app-upload-image>
+
+  <button [disabled]="loading" class="submit" type="submit" [disabled]="homeForm.invalid">Create Home</button>
+
+</form>

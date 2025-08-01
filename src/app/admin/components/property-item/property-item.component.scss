@@ -1,0 +1,20 @@
+.property-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(229, 229, 229, 0.732);
+
+  .item-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+   width: 50%;
+  }
+    .header-col {
+        width: 20%;
+    }
+}

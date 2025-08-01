@@ -2,7 +2,7 @@ import { House, Address } from '../interfaces/house';
 
 export const SAMPLE_HOUSES: House[] = [
   {
-    id: '1',
+    id: 1,
     title: 'Modern Family Home',
     description: 'A beautiful modern family home with spacious garden and pool.',
     price: 450000,
@@ -14,21 +14,40 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
-      'https://images.unsplash.com/photo-1460518451285-97b6aa326961',
+      {
+        url: 'https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        id: 0,
+        home_id: 0
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
+        id: 0,
+        home_id: 0
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1460518451285-97b6aa326961',
+        id: 0,
+        home_id: 0
+      },
     ],
     bedrooms: 4,
     bathrooms: 3,
     area: 2500,
-    listedBy: 'agent-1',
     available: true,
-    features: ['Pool', 'Garage', 'Garden'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Pool' } },
+      { type: { name: 'Garage' } },
+      { type: { name: 'Garden' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '2',
+    id: 2,
     title: 'Downtown Apartment',
     description: 'Cozy apartment in the heart of the city, close to all amenities.',
     price: 320000,
@@ -40,19 +59,25 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd',
+      { url: 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd', id: 0, home_id: 0 }
     ],
     bedrooms: 2,
     bathrooms: 2,
     area: 1100,
-    listedBy: 'agent-2',
     available: true,
-    features: ['Balcony', 'Elevator'],
-    listingType: 'rent',
-    propertyType: 'apartment',
+    features: [
+      { type: { name: 'Balcony' } },
+      { type: { name: 'Elevator' } }
+    ],
+    listing_type: 'rent',
+    property_type: 'apartment',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '3',
+    id: 3,
     title: 'Luxury Beachfront Villa',
     description: 'Stunning villa with ocean views, private beach access, and modern amenities.',
     price: 1200000,
@@ -64,20 +89,28 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae',
-      'https://images.unsplash.com/photo-1465101046530-73398c7f28ca',
+      { url: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae', id: 0, home_id: 0 },
+      { url: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca', id: 0, home_id: 0 },
     ],
     bedrooms: 5,
     bathrooms: 5,
     area: 5000,
-    listedBy: 'agent-1',
     available: false,
-    features: ['Beachfront', 'Infinity Pool', 'Home Theater', 'Smart Home'],
-    listingType: 'sale',
-    propertyType: 'villa',
+    features: [
+      { type: { name: 'Beachfront' } },
+      { type: { name: 'Infinity Pool' } },
+      { type: { name: 'Home Theater' } },
+      { type: { name: 'Smart Home' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'villa',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '4',
+    id: 4,
     title: 'Suburban Starter Home',
     description: 'Affordable single-family home in a quiet neighborhood, perfect for first-time buyers.',
     price: 210000,
@@ -89,24 +122,31 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://static.wixstatic.com/media/6800cb_9bf2a114a40249fc8a8364ae60993b0a~mv2.jpg/v1/fill/w_1024,h_576,al_c,q_85,enc_avif,quality_auto/6800cb_9bf2a114a40249fc8a8364ae60993b0a~mv2.jpg',
-      'https://static.wixstatic.com/media/6800cb_350ac90c4d454ff191c2d97af0a64ca2~mv2.jpg/v1/fill/w_1024,h_576,al_c,q_85,enc_avif,quality_auto/6800cb_350ac90c4d454ff191c2d97af0a64ca2~mv2.jpg',
-      'https://static.wixstatic.com/media/6800cb_95e9451ff60a49938d7c182c39b2f236~mv2.jpg/v1/fill/w_1024,h_576,al_c,q_85,enc_avif,quality_auto/6800cb_95e9451ff60a49938d7c182c39b2f236~mv2.jpg',
-      'https://static.wixstatic.com/media/6800cb_e74dfbe82615441ebd4e67eb54c06d70~mv2.jpg/v1/fill/w_768,h_432,al_c,q_80,enc_avif,quality_auto/6800cb_e74dfbe82615441ebd4e67eb54c06d70~mv2.jpg',
-      'https://static.wixstatic.com/media/6800cb_4ef567f44d1d4c42b068d76114a0ee01~mv2.jpg/v1/fill/w_1024,h_576,al_c,q_85,enc_avif,quality_auto/6800cb_4ef567f44d1d4c42b068d76114a0ee01~mv2.jpg',
-      'https://static.wixstatic.com/media/6800cb_2a8d9659d05949b7837b6b37b7b4fcf7~mv2.jpg/v1/fill/w_1024,h_576,al_c,q_85,enc_avif,quality_auto/6800cb_2a8d9659d05949b7837b6b37b7b4fcf7~mv2.jpg'
+      { url: 'https://static.wixstatic.com/media/6800cb_9bf2a114a40249fc8a8364ae60993b0a~mv2.jpg/v1/fill/w_1024,h_576,al_c,q_85,enc_avif,quality_auto/6800cb_9bf2a114a40249fc8a8364ae60993b0a~mv2.jpg', id: 0, home_id: 0 },
+      { url: 'https://static.wixstatic.com/media/6800cb_350ac90c4d454ff191c2d97af0a64ca2~mv2.jpg/v1/fill/w_1024,h_576,al_c,q_85,enc_avif,quality_auto/6800cb_350ac90c4d454ff191c2d97af0a64ca2~mv2.jpg', id: 0, home_id: 0 },
+      { url: 'https://static.wixstatic.com/media/6800cb_95e9451ff60a49938d7c182c39b2f236~mv2.jpg/v1/fill/w_1024,h_576,al_c,q_85,enc_avif,quality_auto/6800cb_95e9451ff60a49938d7c182c39b2f236~mv2.jpg', id: 0, home_id: 0 },
+      { url: 'https://static.wixstatic.com/media/6800cb_e74dfbe82615441ebd4e67eb54c06d70~mv2.jpg/v1/fill/w_768,h_432,al_c,q_80,enc_avif,quality_auto/6800cb_e74dfbe82615441ebd4e67eb54c06d70~mv2.jpg', id: 0, home_id: 0 },
+      { url: 'https://static.wixstatic.com/media/6800cb_4ef567f44d1d4c42b068d76114a0ee01~mv2.jpg/v1/fill/w_1024,h_576,al_c,q_85,enc_avif,quality_auto/6800cb_4ef567f44d1d4c42b068d76114a0ee01~mv2.jpg', id: 0, home_id: 0 },
+      { url: 'https://static.wixstatic.com/media/6800cb_2a8d9659d05949b7837b6b37b7b4fcf7~mv2.jpg/v1/fill/w_1024,h_576,al_c,q_85,enc_avif,quality_auto/6800cb_2a8d9659d05949b7837b6b37b7b4fcf7~mv2.jpg', id: 0, home_id: 0 }
     ],
     bedrooms: 3,
     bathrooms: 2,
     area: 1600,
-    listedBy: 'agent-2',
     available: true,
-    features: ['Garage', 'Basement', 'Fenced Yard'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Garage' } },
+      { type: { name: 'Basement' } },
+      { type: { name: 'Fenced Yard' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '5',
+    id: 5,
     title: 'Urban Loft',
     description: 'Trendy loft apartment with open floor plan and city skyline views.',
     price: 540000,
@@ -118,19 +158,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1464983953574-0892a716854b',
+      { url: 'https://images.unsplash.com/photo-1464983953574-0892a716854b', id: 0, home_id: 0 }
     ],
     bedrooms: 1,
     bathrooms: 1,
     area: 900,
-    listedBy: 'agent-1',
     available: true,
-    features: ['Open Floor Plan', 'Rooftop Access', 'Pet Friendly'],
-    listingType: 'rent',
-    propertyType: 'loft',
+    features: [
+      { type: { name: 'Open Floor Plan' } },
+      { type: { name: 'Rooftop Access' } },
+      { type: { name: 'Pet Friendly' } }
+    ],
+    listing_type: 'rent',
+    property_type: 'loft',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '6',
+    id: 6,
     title: 'Mountain Cabin Retreat',
     description: 'Rustic cabin with breathtaking mountain views and hiking trails nearby.',
     price: 375000,
@@ -142,19 +189,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1501594907352-04cda38ebc29',
+      { url: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29', id: 0, home_id: 0 }
     ],
     bedrooms: 3,
     bathrooms: 2,
     area: 1800,
-    listedBy: 'agent-2',
     available: true,
-    features: ['Fireplace', 'Deck', 'Mountain View'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Fireplace' } },
+      { type: { name: 'Deck' } },
+      { type: { name: 'Mountain View' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '7',
+    id: 7,
     title: 'Historic Townhouse',
     description: 'Charming townhouse in a historic district, recently renovated.',
     price: 600000,
@@ -166,19 +220,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1464983953574-0892a716854b',
+      { url: 'https://images.unsplash.com/photo-1464983953574-0892a716854b', id: 0, home_id: 0 }
     ],
     bedrooms: 4,
     bathrooms: 3,
     area: 2200,
-    listedBy: 'agent-1',
     available: true,
-    features: ['Historic', 'Courtyard', 'Renovated'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Historic' } },
+      { type: { name: 'Courtyard' } },
+      { type: { name: 'Renovated' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '8',
+    id: 8,
     title: 'Country Farmhouse',
     description: 'Spacious farmhouse with barn and acres of land, ideal for horses.',
     price: 480000,
@@ -190,19 +251,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
+      { url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb', id: 0, home_id: 0 }
     ],
     bedrooms: 5,
     bathrooms: 4,
     area: 3500,
-    listedBy: 'agent-2',
     available: true,
-    features: ['Barn', 'Acreage', 'Wraparound Porch'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Barn' } },
+      { type: { name: 'Acreage' } },
+      { type: { name: 'Wraparound Porch' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '9',
+    id: 9,
     title: 'Lakefront Cottage',
     description: 'Cozy cottage with private dock and beautiful lake views.',
     price: 390000,
@@ -214,19 +282,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae',
+      { url: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae', id: 0, home_id: 0 }
     ],
     bedrooms: 2,
     bathrooms: 1,
     area: 1200,
-    listedBy: 'agent-1',
     available: false,
-    features: ['Lakefront', 'Dock', 'Firepit'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Lakefront' } },
+      { type: { name: 'Dock' } },
+      { type: { name: 'Firepit' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '10',
+    id: 10,
     title: 'Eco-Friendly Smart Home',
     description: 'Modern home with solar panels, smart appliances, and energy-efficient design.',
     price: 700000,
@@ -238,19 +313,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1465101046530-73398c7f28ca',
+      { url: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca', id: 0, home_id: 0 }
     ],
     bedrooms: 4,
     bathrooms: 3,
     area: 2600,
-    listedBy: 'agent-2',
     available: true,
-    features: ['Solar Panels', 'Smart Home', 'EV Charger'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Solar Panels' } },
+      { type: { name: 'Smart Home' } },
+      { type: { name: 'EV Charger' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '11',
+    id: 11,
     title: 'Desert Oasis',
     description: 'Beautiful home with pool and desert landscaping, perfect for warm climates.',
     price: 520000,
@@ -262,19 +344,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1523217582562-09d0def993a6',
+      { url: 'https://images.unsplash.com/photo-1523217582562-09d0def993a6', id: 0, home_id: 0 }
     ],
     bedrooms: 3,
     bathrooms: 2,
     area: 2000,
-    listedBy: 'agent-1',
     available: true,
-    features: ['Pool', 'Desert Landscaping', 'Patio'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Pool' } },
+      { type: { name: 'Desert Landscaping' } },
+      { type: { name: 'Patio' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '12',
+    id: 12,
     title: 'Penthouse Suite',
     description: 'Luxury penthouse with panoramic city views and private elevator access.',
     price: 1500000,
@@ -286,19 +375,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd',
+      { url: 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd', id: 0, home_id: 0 }
     ],
     bedrooms: 3,
     bathrooms: 4,
     area: 3200,
-    listedBy: 'agent-2',
     available: false,
-    features: ['Penthouse', 'Private Elevator', 'City View'],
-    listingType: 'sale',
-    propertyType: 'apartment',
+    features: [
+      { type: { name: 'Penthouse' } },
+      { type: { name: 'Private Elevator' } },
+      { type: { name: 'City View' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'apartment',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '13',
+    id: 13,
     title: 'Tiny Home',
     description: 'Efficient and affordable tiny home, perfect for minimalist living.',
     price: 95000,
@@ -310,19 +406,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1501594907352-04cda38ebc29',
+      { url: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29', id: 0, home_id: 0 }
     ],
     bedrooms: 1,
     bathrooms: 1,
     area: 400,
-    listedBy: 'agent-1',
     available: true,
-    features: ['Tiny Home', 'Minimalist', 'Efficient'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Tiny Home' } },
+      { type: { name: 'Minimalist' } },
+      { type: { name: 'Efficient' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '14',
+    id: 14,
     title: 'Classic Colonial',
     description: 'Traditional colonial home with spacious yard and classic architecture.',
     price: 430000,
@@ -334,19 +437,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1460518451285-97b6aa326961',
+      { url: 'https://images.unsplash.com/photo-1460518451285-97b6aa326961', id: 0, home_id: 0 }
     ],
     bedrooms: 4,
     bathrooms: 3,
     area: 2700,
-    listedBy: 'agent-2',
     available: true,
-    features: ['Colonial', 'Large Yard', 'Fireplace'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Colonial' } },
+      { type: { name: 'Large Yard' } },
+      { type: { name: 'Fireplace' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '15',
+    id: 15,
     title: 'Modern Row House',
     description: 'Contemporary row house in a vibrant urban neighborhood.',
     price: 380000,
@@ -358,19 +468,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1464983953574-0892a716854b',
+      { url: 'https://images.unsplash.com/photo-1464983953574-0892a716854b', id: 0, home_id: 0 }
     ],
     bedrooms: 3,
     bathrooms: 2,
     area: 1500,
-    listedBy: 'agent-1',
     available: true,
-    features: ['Row House', 'Modern', 'Walkable'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Row House' } },
+      { type: { name: 'Modern' } },
+      { type: { name: 'Walkable' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '16',
+    id: 16,
     title: 'Ski Chalet',
     description: 'Cozy chalet near ski slopes, perfect for winter getaways.',
     price: 650000,
@@ -382,19 +499,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1501594907352-04cda38ebc29',
+      { url: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29', id: 0, home_id: 0 }
     ],
     bedrooms: 4,
     bathrooms: 3,
     area: 2300,
-    listedBy: 'agent-2',
     available: true,
-    features: ['Mountain View', 'Fireplace', 'Hot Tub'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Mountain View' } },
+      { type: { name: 'Fireplace' } },
+      { type: { name: 'Hot Tub' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '17',
+    id: 17,
     title: 'Victorian Mansion',
     description: 'Grand Victorian mansion with ornate details and large garden.',
     price: 2000000,
@@ -406,19 +530,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1460518451285-97b6aa326961',
+      { url: 'https://images.unsplash.com/photo-1460518451285-97b6aa326961', id: 0, home_id: 0 }
     ],
     bedrooms: 6,
     bathrooms: 5,
     area: 7000,
-    listedBy: 'agent-1',
     available: false,
-    features: ['Victorian', 'Garden', 'Historic'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Victorian' } },
+      { type: { name: 'Garden' } },
+      { type: { name: 'Historic' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '18',
+    id: 18,
     title: 'Golf Course Estate',
     description: 'Elegant estate home overlooking a championship golf course.',
     price: 1100000,
@@ -430,19 +561,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
+      { url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb', id: 0, home_id: 0 }
     ],
     bedrooms: 5,
     bathrooms: 4,
     area: 4800,
-    listedBy: 'agent-2',
     available: true,
-    features: ['Golf Course', 'Pool', 'Gated Community'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Golf Course' } },
+      { type: { name: 'Pool' } },
+      { type: { name: 'Gated Community' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '19',
+    id: 19,
     title: 'Seaside Bungalow',
     description: 'Charming bungalow steps from the beach, perfect for summer vacations.',
     price: 420000,
@@ -454,19 +592,26 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae',
+      { url: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae', id: 0, home_id: 0 }
     ],
     bedrooms: 2,
     bathrooms: 1,
     area: 950,
-    listedBy: 'agent-1',
     available: true,
-    features: ['Beach Access', 'Porch', 'Bungalow'],
-    listingType: 'sale',
-    propertyType: 'house',
+    features: [
+      { type: { name: 'Beach Access' } },
+      { type: { name: 'Porch' } },
+      { type: { name: 'Bungalow' } }
+    ],
+    listing_type: 'sale',
+    property_type: 'house',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
   {
-    id: '20',
+    id: 20,
     title: 'Downtown Studio',
     description: 'Compact studio apartment in the heart of downtown, ideal for young professionals.',
     price: 275000,
@@ -478,15 +623,22 @@ export const SAMPLE_HOUSES: House[] = [
       country: 'Ghana',
     },
     images: [
-      'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd',
+      { url: 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd', id: 0, home_id: 0 }
     ],
     bedrooms: 0,
     bathrooms: 1,
     area: 500,
-    listedBy: 'agent-2',
     available: true,
-    features: ['Studio', 'Downtown', 'Modern'],
-    listingType: 'rent',
-    propertyType: 'apartment',
+    features: [
+      { type: { name: 'Studio' } },
+      { type: { name: 'Downtown' } },
+      { type: { name: 'Modern' } }
+    ],
+    listing_type: 'rent',
+    property_type: 'apartment',
+    headline: '',
+    sponsored: false,
+    created_at: '',
+    address_id: 0
   },
-]; 
+];

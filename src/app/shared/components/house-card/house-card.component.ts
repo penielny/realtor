@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { House } from '../../../interfaces/house';
 import { CommonModule } from '@angular/common';
-import { GhsCurrencyPipe } from '../../pipes/ghs-currency.pipe';
+import { GhsCurrencyPipe } from '../../../pipes/ghs-currency.pipe';
+import { House } from '../../../../interfaces/house';
+
 
 @Component({
   selector: 'app-house-card',

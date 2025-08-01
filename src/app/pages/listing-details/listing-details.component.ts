@@ -3,10 +3,12 @@ import { House } from '../../../interfaces/house';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SAMPLE_HOUSES } from '../../../sample-data/sample-houses';
 import { GhsCurrencyPipe } from '../../pipes/ghs-currency.pipe';
+import { ClientLayoutComponent } from "../../layouts/client-layout/client-layout.component";
+import { HomesService } from '../../admin/services/homes.service';
 
 @Component({
   selector: 'app-listing-details',
-  imports: [GhsCurrencyPipe],
+  imports: [GhsCurrencyPipe, ClientLayoutComponent],
   templateUrl: './listing-details.component.html',
   styleUrl: './listing-details.component.scss'
 })
@@ -17,27 +19,32 @@ export class ListingDetailsComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
-  ) {}
+    private router: Router,
+    private homeService: HomesService
+  ) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      const houseId = params['id'];
-      this.house = SAMPLE_HOUSES.find(house => house.id === houseId);
-      
-      if (!this.house) {
-        this.router.navigate(['/listings']);
-        return;
-      }
+    const houseId = Number(this.route.snapshot.paramMap.get('id'))
 
-      this.relatedHouses = SAMPLE_HOUSES
-        .filter(house => house.propertyType === this.house?.propertyType && house.id !== this.house?.id)
-        .slice(0, 3);
-    });
+    if (isNaN(houseId)) {
+      this.router.navigate(['/listings']);
+      return;
+    }
+
+    this.homeService.getHomeById(houseId).subscribe({
+      next: (house) => {
+        this.house = house;
+      },
+      error: (err) => {
+        console.error('Error fetching house details:', err);
+        this.router.navigate(['/listings']);
+      }
+    })
+
   }
 
-  get bannerImage():string{
-    if(!this.house) return '';
-    return this.house.images[0]
+  get bannerImage(): string {
+    if (!this.house) return '';
+    return this.house.images[0].url
   }
 }

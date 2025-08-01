@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { SAMPLE_HOUSES } from '../../../sample-data/sample-houses';
 import { House, ListingType, PropertyType } from '../../../interfaces/house';
-import { HouseCardComponent } from '../../shared/house-card/house-card.component';
 import { CommonModule } from '@angular/common';
-import { SearchBarComponent } from '../../shared/search-bar/search-bar.component';
+import { ClientLayoutComponent } from "../../layouts/client-layout/client-layout.component";
+import { HouseCardComponent } from '../../shared/components/house-card/house-card.component';
+import { SearchBarComponent } from '../../shared/components/search-bar/search-bar.component';
 @Component({
   selector: 'app-listings',
-  imports: [HouseCardComponent,CommonModule,SearchBarComponent],
+  imports: [HouseCardComponent, CommonModule, SearchBarComponent, ClientLayoutComponent],
   templateUrl: './listings.component.html',
   styleUrl: './listings.component.scss'
 })
@@ -32,8 +33,8 @@ export class ListingsComponent {
         house.title.toLowerCase().includes(term) ||
         house.address.city.toLowerCase().includes(term);
   
-      const matchesType = !selectedType || house.propertyType === selectedType;
-      const matchesSaleType = !selectedSaleType || house.listingType === selectedSaleType;
+      const matchesType = !selectedType || house.property_type === selectedType;
+      const matchesSaleType = !selectedSaleType || house.listing_type === selectedSaleType;
   
       return matchesSearch && matchesType && matchesSaleType;
     });

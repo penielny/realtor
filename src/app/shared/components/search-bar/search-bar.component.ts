@@ -1,7 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { PropertyType,ListingType } from '../../../interfaces/house';
+import { ListingType, PropertyType } from '../../../../interfaces/house';
+
 
 @Component({
   selector: 'app-search-bar',

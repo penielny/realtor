@@ -1,0 +1,88 @@
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  padding-right: 1rem;
+
+  svg{
+    height: 2rem;
+    color: var(--color-accent);
+  }
+
+  .navbar-logo-icon {
+    font-size: 2rem;
+  }
+}
+
+.wrapper {
+    height: 100dvh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+
+    .illustration {
+        flex: 1;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(https://images.unsplash.com/photo-1451976426598-a7593bd6d0b2?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    }
+
+    .form-container {
+        width: 40%;
+        padding: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            .header {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+
+                p{
+                    color: rgb(113, 113, 113);
+                    line-height: 1.6rem;
+                }
+            }
+
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+
+                .field {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+
+                    label{
+                        font-size: 14px;
+                    }
+
+                    input{
+                        padding: 1rem;
+                        border-radius: 0.4rem;
+                    }
+                }
+            }
+            .login{
+                padding: 1rem;
+                 border-radius: 0.4rem;
+                 font-weight: bold;
+                 background-color: black;
+                 color: white;
+            }
+        }
+    }
+}
